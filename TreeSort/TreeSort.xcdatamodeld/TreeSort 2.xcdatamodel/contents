@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="untitled.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="562" systemVersion="11B26" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Category">
+        <attribute name="displayName" optional="YES" attributeType="String"/>
+        <relationship name="leaf" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Leaf" inverseName="category" inverseEntity="Leaf"/>
+    </entity>
+    <entity name="Group" representedClassName="ESGroupNode">
+        <attribute name="canCollapse" attributeType="Boolean" defaultValueString="YES"/>
+        <attribute name="canExpand" attributeType="Boolean" defaultValueString="YES"/>
+        <attribute name="isExpanded" attributeType="Boolean" defaultValueString="NO"/>
+        <attribute name="isSpecialGroup" attributeType="Boolean" defaultValueString="NO"/>
+    </entity>
+    <entity name="Leaf" representedClassName="ESLeafNode">
+        <relationship name="category" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Category" inverseName="leaf" inverseEntity="Category"/>
+    </entity>
+    <elements>
+        <element name="Group" positionX="-1665" positionY="-783" width="128" height="105"/>
+        <element name="Leaf" positionX="-1719" positionY="-531" width="128" height="60"/>
+        <element name="Category" positionX="-1397" positionY="-669" width="128" height="75"/>
+    </elements>
+</model>
